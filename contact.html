@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about Zia Arevalo, a Multimedia Arts student interested in art, makeup, and web design.">
+  <title> Contact | Zia Arevalo </title>
+  <link rel="stylesheet" href="Arevalo_css-styles.css">
+  <script src="Arevalo_settings.js"> </script>
+  <script src="Arevalo_js-app.js" defer> </script>
+</head>
+
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Zia Arevalo, Home"> Zia <span> . </span> </a>
+  <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html"> Home </a>
+      <a href="about.html"> About Me </a>
+      <a href="projects.html"> My Projects </a>
+      <a href="coursework.html"> Web Design </a>
+      <a href="about.html" aria-current="page"> Contact </a>
+    </nav>
+
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"> ◐ <span class="theme-label"> Theme </span> </button>
+    </header>
+
+    <main>
+      <section class="page-heading page-width"> </section>
+      <p class="eyebrow"> Say hi! </p>
+      <h1> Have a project in mind? </h1>
+      <p class="lede"> I'm more than happy to lend a helping hand with bringing your ideas to life. </p>
+    </section>
+
+    <section class="page-width two-column section-block">
+      <aside class="contact-card">
+        <p class="card-kicker"> Contact Information </p>
+        <h2> Let's connect </h2>
+        <p> Use the message form to send me an inquiry or a quick message. </p>
+        <div class="contact-detail"> 
+          <span class="detail-icon" aria-hidden="true"> ✉ </span>
+          <p class="note"> This student portfolio currently onlky includes front-end contact form. It does not send nor store messages. </p>
+        </aside>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-heading"> 
+            <p class="eyebrow"> Message form </p>
+            <h2> What would you like me to know? </h2>
+          </div>
+
+          <label for="contact-name"> Your name </label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" required>
+
+          <label for="contact-email"> Email </label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required>
+
+          <label for="contact-subject"> Subject </label>
+          <input id="contact-subject" name="subject" type="text" required>
+
+          <label for="contact-message"> Message </label>
+          <textarea id="contact-message" name="message" rows="5" required> </textarea>
+
+          <button class="button button-primary" type="submit"> Send message <span aria-hidden="true"> → </span>
+          </button>
+
+          <p class="form-status" id="contact-status" aria-live="polite"> </p>
+        </form>
+      </section>
+      </main>
+
+      <footer class="site-footer">
+  <div class="page-width footer-inner">
+    <p> © 2026 Zia Arevalo </p>
+    </div>
+  </footer>
+</body>
+</html>

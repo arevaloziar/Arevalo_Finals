@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A gallery of Zia Arevalo's personal illustration, painting, and visual design projects.">
+  <title> My Projects | Zia Arevalo </title>
+  <link rel="stylesheet" href="Arevalo_css-styles.css">
+  <script src="Arevalo_settings.js"> </script>
+  <script src="Arevalo_js-app.js" defer> </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zia Arevalo, home"> Zia <span> . </span> </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html"> Home </a>
+      <a href="about.html"> About Me </a>
+      <a href="projects.html" aria-current="page"> My Projects </a>
+      <a href="coursework.html"> Web Design </a>
+      <a href="contact.html"> Contact </a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"> ◐ <span class="theme-label"> Theme </span> </button>
+  </header>
+
+  <main>
+    <section class="page-heading page-width">
+      <p class="eyebrow"> Selected personal works </p>
+      <h1> Ideas, scenes, and little worlds. </h1>
+      <p class="lede"> A selection of my works. Choose a category to filter the gallery. </p>
+
+      <div class="filter-row" role="group" aria-label="Filter projects">
+        <button class="filter-button is-active" type="button" data-project-filter="all" aria-pressed="true"> All work </button>
+        <button class="filter-button" type="button" data-project-filter="illustration" aria-pressed="false"> Illustration </button>
+        <button class="filter-button" type="button" data-project-filter="painting" aria-pressed="false"> Painting </button>
+        <button class="filter-button" type="button" data-project-filter="design" aria-pressed="false"> Design </button>
+      </div>
+    </section>
+
+    <section class="page-width section-block project-grid" aria-label="Project gallery">
+      <article class="project-card" data-project-category="painting illustration">
+        <img src="assets/IMG_5985.jpeg" alt="Digital painting Howl's secret gardenr" loading="lazy">
+        <div class="project-copy"> <p class="card-kicker"> Digital painting · Landscape </p>
+          <h2> Howl's Secret Graden </h2>
+          <p> A digital rendition I made of a scene from Studio Ghibli's film, "Howl's Moving Castle". </p>
+        </div>
+      </article>
+
+      <article class="project-card" data-project-category="illustration design">
+        <img src="assets/IMG_5984.jpeg" alt="Colorful illustrated dessert and food poster" loading="lazy">
+        <div class="project-copy"> <p class="card-kicker"> Digital illustration · Food </p>
+          <h2> Are you Hungry? </h2>
+          <p >A playful food poster I made to showcase South Korea's cuisine. </p>
+        </div>
+      </article>
+
+      <article class="project-card" data-project-category="illustration design">
+        <img src="assets/IMG_5986.png" alt="Dark fantasy comic book poster" loading="lazy">
+        <div class="project-copy"> <p class="card-kicker"> Illustration · Poster </p>
+          <h2> When Nighttime Comes </h2>
+          <p> A Commic Book poster/cover I made recently for my Digital Drawing class. </p>
+        </div>
+      </article>
+
+      <article class="project-card" data-project-category="painting illustration">
+        <img src="assets/IMG_5982.jpeg" alt="Underwater mural drawn by a kid" loading="lazy">
+        <div class="project-copy"> <p class="card-kicker"> Painting · Mural </p>
+          <h2> Little hands, Big dreams. </h2>
+          <p> A colorful underwater mural drawn by a kid. I drew this as my entry for this year's Shell Art Competition. </p>
+        </div>
+      </article>
+
+      <article class="project-card" data-project-category="design illustration">
+        <img src="assets/IMG_5983.jpeg" alt="Poster of vinyl sticker artwork with colorful sticker concepts" loading="lazy">
+        <div class="project-copy"> <p class="card-kicker"> Visual design · Sticker concept </p>
+          <h2> Hope On The Stage-Manila stop Vinyl Stickers </h2>
+          <p> A fan project concept I made last 2025 showcasing the performing artists in my own art style. </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="page-width callout">
+      <div> <p class="eyebrow"> Class projects </p>
+        <h2> Also learning web design. </h2>
+      </div>
+      <a class="button button-primary" href="coursework.html"> View Web Design work <span aria-hidden="true"> ↗ </span> </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <p>© 2026 Zia Arevalo</p>
+    </div>
+  </footer>
+</body>
+</html>
