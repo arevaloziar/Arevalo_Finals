@@ -1,4 +1,4 @@
-// This file runs in the head so the saved theme is ready before the page shows.
+
 (function () {
   const settingsKey = "zia-portfolio-settings-v1";
   const defaults = {

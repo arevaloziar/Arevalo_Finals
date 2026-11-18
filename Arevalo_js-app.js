@@ -1,70 +1,65 @@
 const portfolio = window.portfolioSettings;
-const settings = portfolio.value;
-const visitorForm = document.querySelector("#visitor-form");
-const visitorNameInput = document.querySelector("#visitor-name");
-const visitorGreeting = document.querySelector("#visitor-greeting");
-const lastVisit = document.querySelector("#last-visit");
+const settings = portfolio ? portfolio.value : { theme: "light" };
+const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
-const themeLabel = themeToggle.querySelector(".theme-label");
-const storageNote = document.querySelector(".storage-note");
-const contactForm = document.querySelector("#contact-form");
-const contactStatus = document.querySelector("#contact-status");
-
-function showGreeting() {
-  if (settings.visitorName) {
-    visitorGreeting.textContent = "Welcome, " + settings.visitorName + "!";
-  } else {
-    visitorGreeting.textContent = "Welcome to my portfolio!";
-  }
-}
+const themeLabel = themeToggle ? themeToggle.querySelector(".theme-label") : null;
 
 function updateThemeButton() {
+  if (!themeToggle) return;
   const isDark = settings.theme === "dark";
   themeToggle.setAttribute("aria-pressed", String(isDark));
   themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
-  themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
+  if (themeLabel) themeLabel.textContent = "Theme";
+  themeToggle.firstChild.textContent = isDark ? "☀ " : "◐ ";
 }
 
-function saveAndShowStatus() {
-  const saved = portfolio.save();
-  storageNote.textContent = saved
-    ? "Your theme and name stay in this browser."
-    : "The page still works, but this browser is not saving settings.";
-  return saved;
+function saveSettings() {
+  return portfolio ? portfolio.save() : false;
 }
 
-visitorNameInput.value = settings.visitorName;
-showGreeting();
-updateThemeButton();
-
-if (settings.lastVisit) {
-  const previousVisit = new Date(settings.lastVisit).toLocaleString();
-  lastVisit.textContent = "Your last visit was " + previousVisit + ".";
-} else {
-  lastVisit.textContent = "This is your first visit.";
-}
-
-// Save this visit after showing the one from before.
-settings.lastVisit = new Date().toISOString();
-saveAndShowStatus();
-
-themeToggle.addEventListener("click", function () {
-  settings.theme = settings.theme === "dark" ? "light" : "dark";
-  document.documentElement.dataset.theme = settings.theme;
+if (themeToggle) {
   updateThemeButton();
-  saveAndShowStatus();
-});
+  themeToggle.addEventListener("click", function () {
+    settings.theme = settings.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = settings.theme;
+    updateThemeButton();
+    saveSettings();
+  });
+}
 
-visitorForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  settings.visitorName = visitorNameInput.value.trim().slice(0, 40);
-  visitorNameInput.value = settings.visitorName;
-  showGreeting();
-  saveAndShowStatus();
-});
+function setupFilter(buttonAttribute, cardSelector, cardAttribute) {
+  const buttons = Array.from(document.querySelectorAll("[" + buttonAttribute + "]"));
+  if (!buttons.length) return;
+  const cards = Array.from(document.querySelectorAll(cardSelector));
 
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  contactStatus.textContent = "Thanks! This demo does not send or save the message.";
-  contactForm.reset();
-});
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const filter = button.getAttribute(buttonAttribute);
+      buttons.forEach(function (item) {
+        const selected = item === button;
+        item.classList.toggle("is-active", selected);
+        item.setAttribute("aria-pressed", String(selected));
+      });
+      cards.forEach(function (card) {
+        const categories = (card.getAttribute(cardAttribute) || "").split(/\s+/);
+        card.hidden = filter !== "all" && !categories.includes(filter);
+      });
+    });
+  });
+}
+
+setupFilter("data-project-filter", ".project-card", "data-project-category");
+setupFilter("data-course-filter", ".course-card", "data-course-category");
+
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) {
+  const status = document.querySelector("#contact-status");
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    if (status) {
+      status.textContent = "Thanks for your message! This front-end demo does not send or store it.";
+    }
+    contactForm.reset();
+  });
+}
