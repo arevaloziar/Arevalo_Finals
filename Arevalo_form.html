@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Student Event Registration Form </title>
+        <body>
+
+            <h1>Student Event Registration Form </h1>
+            <p> Please complete the form below to register for the upcoming event. </p>
+            <form>
+            <! -- Form fields for student event registration -->
+            <div class="form-container">
+
+<! -- Left Column -->
+<div class="form-column">
+    <h3> Personal Information </h3>
+                <label for="fullname">FullName:</label> <br>
+                <input type="text" id="fullname" name="fullname" required> <br><br>
+
+                <label for="student_num">Student Number:</label> <br>
+                <input type="text" id="student_num" name="student_num" required> <br><br>
+
+                <label for="email">Email Address:</label> <br>
+                <input type="text" id="email" name="email" required> <br><br>
+
+                 <label for="password">Password:</label> <br>
+                <input type="text" id="password" name="password" required> <br><br>
+
+                <! -- Dropdown list with several options -->
+                <label for="birthdate">Birth Date:</label> <br>
+                <input type="date"> </type>
+                
+            </select> <br> <br>
+            <! -- Radio buttons that allow only ONE selection -->
+            <label> <h3> Academic Information </label> </h3> <br>
+
+            <label> Year Level </label> <br>
+            <input type="radio" id="first" name="year" value="first_year">
+            <label for="year level"> First Year </label> 
+            <br>
+
+            <input type="radio" id="second" name="year" value="second_year">
+            <label for="year level">Second Year </label>
+            <br>
+            
+            <input type="radio" id="third" name="year" value="third_year">
+            <label for="year level">Third Year</label>
+            <br>
+
+            <input type="radio" id="fourth" name="year" value="fourth_year">
+            <label for="year level">Fourth Year</label> <br>
+            <br>
+
+ <! -- Dropdown list with several options -->
+                <label for="program">Program:</label>
+                <select id="program" name="program">
+                    <br>
+                    <option value=""> --Select your program-- </option>
+                    <option value="BMA"> BMA </option>
+                    <option value="BS-IT"> BS-IT </option>
+                    <option value="BS-EE"> BS-EE </option>
+                    <option value="BS-CE"> BS-CE </option>
+                    <option value="BS-ME"> BS-ME </option>
+                </select>
+            </div>
+                
+            <! -- Checkboxes that allow MULTIPLE selection -->
+            <div class="form-column"> 
+                <h3> Event Preferences </h3>
+
+            <label>Sessions You Want To Attend:</label> <br>
+            
+            <input type="checkbox" id="web" name="development" value="web_development">
+            <label for="web_development">Web Development</label> <br>
+
+            <input type="checkbox" id="UI/UX" name="UI/UX" value="UI/UX">
+            <label for="UI/UX">UI/UX Design</label> <br>
+
+            <input type="checkbox" id="cybersecurity" name="workshops" value="cybersecurity">
+            <label for="cybersecurity">Cybersecurity</label> <br>
+            
+            <input type="checkbox" id="artificial-intelligence" name="workshops" value="artificial-intelligence">
+            <label for="artificial-intelligence">Artificial Intelligence</label> <br> <br>
+
+             <label for="schedule">Preffered Schedule:</label> <br>
+            <select id="schedule" name="schedule">
+                    <option value="Morning Session - 9:00 AM"> Morning Session - 9:00 AM </option> 
+                    <option value="time"> Morning Session - 9:00AM </option>
+                    <option value="BS-IT"> Morning Session - 9:40AM </option>
+                    <option value="BS-EE"> Morning Session - 10:10AM </option>
+                    <option value="BS-CE"> Morning Session - 10:40AM </option>
+                    <option value="BS-ME"> Morning Session - 11:10AM </option>
+                    </optgroup>
+                    </select> <br> <br>
+
+                      <! -- Text Area for longer responses -->
+                     <h3> Additional Information </h3> 
+            <label for="reason"> Why do you want to attend this event? </label> <br>
+               <textarea id="comments" name="comments" rows="4" cols="50"> </textarea> <br>
+
+            <br>
+
+            <input type="checkbox" id="check" name="box" value="checkbox">
+            <label for="check">I confirm that the information provided above is correct.</label> <br> <br>
+
+            <! -- Submimt button -->
+            <input type="submit" value="Submit Registration" value="Submit Registration">
+
+            <! -- Reset button -->
+            <input type="reset" value="Clear Form" value="Clear Form"> <br><br>
+                </div>
+            </form>
+    </body>
+</html>
